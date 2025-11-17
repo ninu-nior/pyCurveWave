@@ -58,14 +58,14 @@ Normalization helpers
 📦 Installation
 bash
 # Clone the repository
-git clone https://github.com/<your-username>/pyCurveWave.git
+git clone https://github.com/ninu-nior/pyCurveWave
 cd pyCurveWave
 
 # Install locally (editable mode)
 pip install -e .
 
 # Install requirements
-pip install -r requirements.txt
+
 ⚙️ MATLAB + CurveLab Setup
 Curvelet augmentation requires:
 
