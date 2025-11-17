@@ -1,40 +1,43 @@
 pyCurveWave
 Wavelet + Curvelet Augmentation Library for Python
 
-pyCurveWave is a lightweight Python library that provides powerful image augmentation utilities using:
+pyCurveWave is a lightweight Python library that provides robust frequency-domain image augmentation for research and deep learning applications.
+
+Overview
+pyCurveWave offers:
 
 Wavelet transforms (pure Python)
 
-Curvelet transforms (via MATLAB + CurveLab)
+Curvelet transforms (via MATLAB Engine and CurveLab)
 
-Temperature-based augmentation for random but controlled variations
+Temperature-based augmentation for controlled randomness
 
 Parameter-based augmentation for deterministic transforms
 
-This library is ideal for:
+Ideal for:
 
-Computer vision researchers
+Computer vision research
 
 Deep learning augmentation pipelines
 
 Frequency-domain image analysis
 
-Medical imaging / plant disease / texture recognition
+Medical imaging, plant disease, and texture recognition
 
 🚀 Features
-✔ Wavelet Augmentation
+Wavelet Augmentation
 
-Multi-level wavelet decomposition
+Multi-level decomposition
 
 High-frequency manipulation
 
-LL brightness/contrast modulation
+LL (approximation) band brightness/contrast modulation
 
 Dropband simulation
 
 Temperature-driven randomness
 
-✔ Curvelet Augmentation
+Curvelet Augmentation
 
 Uses MATLAB Engine + CurveLab (FDCT Wrapping)
 
@@ -46,56 +49,56 @@ High-frequency texture injection
 
 Adjustable randomization
 
-✔ Utility Functions
+Utility Functions
 
-Image blending
-
-Weighted combinations
+Image blending, weighted combinations
 
 Normalization helpers
 
 📦 Installation
-1️⃣ Clone the repo
+bash
+# Clone the repository
 git clone https://github.com/<your-username>/pyCurveWave.git
 cd pyCurveWave
 
-2️⃣ Install locally
+# Install locally (editable mode)
 pip install -e .
 
-3️⃣ Install required packages
+# Install requirements
 pip install -r requirements.txt
-
-⚙️ MATLAB + CurveLab Setup (For Curvelet Augmentation)
-
-Curvelet functions require:
+⚙️ MATLAB + CurveLab Setup
+Curvelet augmentation requires:
 
 MATLAB installed
 
-MATLAB Engine for Python installed
+MATLAB Engine for Python
 
-CurveLab added to MATLAB’s path
+CurveLab toolbox added to MATLAB’s path
 
-Install MATLAB engine:
+Install MATLAB Engine for Python:
 
+bash
 cd "C:\Program Files\MATLAB\R2022b\extern\engines\python"
 python setup.py install
-
-
 Download CurveLab:
 https://www.curvelet.org/
 
 🧪 Usage Example
-Start MATLAB engine
+Start MATLAB engine with CurveLab path:
+
+python
 from pyCurveWave import core
 
 eng = core.start_matlab_engine(
     curvelab_path="C:/path/to/CurveLab/fdct_wrapping_matlab"
 )
+Wavelet Augmentation (temperature mode):
 
-Wavelet Augmentation (Temperature Mode)
+python
 aug, params = core.wavelet_augment(image, temperature=0.7)
+Wavelet Augmentation (custom parameter mode):
 
-Wavelet Augmentation (Custom Parameter Mode)
+python
 custom_params = {
     "wavelet_family": "db",
     "wavelet": "db2",
@@ -103,8 +106,10 @@ custom_params = {
     "random_factors_high_freq": [1.1, 1.0, 0.9],
 }
 aug, params = core.wavelet_augment(image, params=custom_params)
+Curvelet Augmentation (temperature mode):
 
-Curvelet Augmentation (Temperature Mode)
+python
+
 aug, params = core.curvelet_augment_color(
     "image.jpg", eng=eng, temperature=0.6
 )
