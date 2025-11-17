@@ -1,9 +1,9 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: pyCurveWave
 Version: 0.1.0
 Summary: A Python library for hybrid Curvelet and Wavelet image analysis and augmentation
-Author: Nehal Mantri
-Author-email: nehalsmantri@gmail.com
+Author: Nehal Mantri, Aditya Mukati
+Author-email: nehalsmantri@gmail.com, adityamukati8564@gmail.com
 Classifier: Programming Language :: Python :: 3
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.8
@@ -12,3 +12,9 @@ Requires-Dist: opencv-python
 Requires-Dist: matplotlib
 Requires-Dist: pywavelets
 Requires-Dist: scikit-image
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

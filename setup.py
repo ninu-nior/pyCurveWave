@@ -27,7 +27,7 @@ def check_matlab_engine():
         return True
     except ImportError:
         print(
-            "\n⚠️  MATLAB Engine for Python is not installed.\n"
+            "\n  MATLAB Engine for Python is not installed.\n"
             "   Some features of pyCurveWave (like Curvelet transforms via MATLAB) "
             "require it.\n"
             "   To install manually, run:\n"

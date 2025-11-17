@@ -102,6 +102,8 @@ eng = core.start_matlab_engine(
 
 **Wavelet Augmentation (Temperature Mode)**
 ```bash
+import cv2
+image = cv2.imread("path/to/image.jpg")
 aug, params = core.wavelet_augment(image, temperature=0.7)
 ```
 **Wavelet Augmentation (Custom Parameter Mode)**
